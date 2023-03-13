@@ -5,7 +5,7 @@
 
 서버사이드 랜더링..? 이번 원티드 프리온보딩 사전과제를 하면서 이 개념에 대해 알아보았는데 글로만 봐서는 어떤 개념인지 이해가 잘 되지 않았습니다.😓 NextJS를 공부하면서 위의 기능들이 어떤걸 의미하는지, React와는 어떤 차이가 있는지 학습하도록 하겠습니다.
 
-## <span style="color:purple">본격 NextJS 프로젝트 시작하기
+## 본격 NextJS 프로젝트 시작하기
 
 `$ npx create-next-app@latest`
 
@@ -15,11 +15,11 @@
 
 <br/>
 
----
+## 새롭게 알게된 내용
 
 <br/>
 
-### <span style="color:purple">라이브러리와 프레임워크의 차이
+### 💟 라이브러리와 프레임워크의 차이
 
 대표적인 라이브러리인 리액트로 설명을 하자면 리액트는 우리가 원할 때 부르고 원할 때 사용하는 방식이라면, 프레임워크인 NextJS는 직접 적절한 곳에 코드를 넣어야하는 차이가 있습니다.
 
@@ -29,7 +29,7 @@
 
 <br/>
 
-### <span style="color:purple">페이지 추가하기
+### 💟 페이지 추가하기
 
 NextJS는 pages라는 폴더안에 있는 파일명이 곧 페이지가 됩니다.
 즉, pages 폴더안에 'mypage' 파일명을 추가한다면 '/mypage' url이 완성되는 것 입니다.
@@ -48,7 +48,7 @@ NextJS는 pages라는 폴더안에 있는 파일명이 곧 페이지가 됩니�
 
 <br/>
 
-### <span style="color:purple">404 NotFound Page
+### 💟 404 NotFound Page
 
 create-react-app과 달리 create-next-app은 404 페이지를 제공합니다.
 커스텀도 가능합니다.
@@ -59,7 +59,7 @@ create-react-app과 달리 create-next-app은 404 페이지를 제공합니다.
 
 <br/>
 
-### <span style="color:purple">jsx사용
+### 💟 jsx사용
 
 별다른 Import 없이 jsx를 사용할 수 있습니다.
 **단, useEffect, useState 같은 리액트 기능을 사용할 땐 react를 import 해주어야 합니다.**
@@ -70,7 +70,7 @@ create-react-app과 달리 create-next-app은 404 페이지를 제공합니다.
 
 <br/>
 
-### <span style="color:purple">NextJS의 Static Pre Rendering
+### 💟 NextJS의 Static Pre Rendering
 
 NextJS로 만든 앱은 페이지를 미리 렌더링한다는 장점이 있습니다.<br/>
 사용자가 초기 화면을 긴 로딩 없이 볼 수 있습니다. 그리고 미리 랜더링 되어있기 때문에 SEO(Search Engine Optimization) 적용이 용이합니다.
@@ -83,7 +83,7 @@ NextJS로 만든 앱은 페이지를 미리 렌더링한다는 장점이 있습�
 
 <br/>
 
-### 라우팅
+### 💟 라우팅
 
 NextJS에서 anchor 기능을 사용하고 싶을 때에는
 아래 형태처럼 Link 태그로 감싸주어야합니다.
@@ -113,7 +113,7 @@ NextJS는 어떤 페이지보다도 `_app.js` 파일을 먼저 읽기 때문에<
 
 <br/>
 
-### 전역 스타일 지정하기
+### 💟 전역 스타일 지정하기
 
 `_app.js`파일에서 전역 스타일을 지정할 수 있습니다. 바로 `<style jsx global></style>`을 사용해주면 됩니다.
 
@@ -149,7 +149,7 @@ export default function App({ Component, pageProps }) {
 
 <br/>
 
-### Layout 컴포넌트 만들기
+### 💟 Layout 컴포넌트 만들기
 
 `_app.js`는 NextJS가 가장 먼저 읽는 파일인만큼 담아야하는 내용도 많습니다. <br/>
 타이틀, 레이아웃, 전역스타일 등등..<br/>
