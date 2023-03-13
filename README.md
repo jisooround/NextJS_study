@@ -1,4 +1,4 @@
-## <span style="color:purple">NextJS?
+# NextJS_study
 
 저도 처음 접하기 때문에 공부하기에 앞서 뭔지 조금 찾아보았습니다.
 
