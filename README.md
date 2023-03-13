@@ -204,3 +204,17 @@ export default function App({ Component, pageProps }) {
 ```
 
 그런 다음 Layout 컴포넌트로 app의 내용을 감싸주면 됩니다.
+
+<br/>
+
+---
+
+### 💟 SEO 스킬 사용하기
+
+NextJS는 Head 컴포넌트를 제공합니다.<br/>
+Head 컴포넌트를 사용함으로써 SEO에 유리한 프로젝트를 만들 수 있습니다.<br/>
+Head 말고도 다른 SEO를 위한 컴포넌트를 사용하여 커스텀 하는것도 가능합니다.<br/>
+
+<br/>
+
+---

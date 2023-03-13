@@ -1,4 +1,3 @@
-import NavBar from "@/components/Navbar";
 import Seo from "@/components/Seo";
 
 export default function Home() {
