@@ -64,7 +64,11 @@ create-react-app과 달리 create-next-app은 404 페이지를 제공합니다.
 별다른 Import 없이 jsx를 사용할 수 있습니다.
 **단, useEffect, useState 같은 리액트 기능을 사용할 땐 react를 import 해주어야 합니다.**
 
+<br/>
+
 ---
+
+<br/>
 
 ### <span style="color:purple">NextJS의 Static Pre Rendering
 
@@ -73,25 +77,34 @@ NextJS로 만든 앱은 페이지를 미리 렌더링한다는 장점이 있습�
 
 반면 React로 만든 앱은 CSR(Client Side Render)입니다. 유저가 보는 UI를 하나의 div안에 랜더합니다.
 
+<br/>
+
 ---
+
+<br/>
 
 ### 라우팅
 
 NextJS에서 anchor 기능을 사용하고 싶을 때에는
 아래 형태처럼 Link 태그로 감싸주어야합니다.
+
 <br/>
 
 ```javascript
 import Link from 'next/link
 
-<Link href="/">
-  <a>Home</a>
-</Link>
+<Link href="/">Home</Link>
 ```
 
+<br/>
+
 ---
+
+<br/>
 
 ### `_app.js` 파일 활용하기
 
 NextJS는 어떤 페이지보다도 `_app.js` 파일을 먼저 읽기 때문에<br/>
 전역 스타일을 설정하거나, app의 layout을 설정 할 때에는 `_app.js` 를 관리하면 됩니다.
+
+<br/>
