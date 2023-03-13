@@ -116,9 +116,10 @@ NextJS는 어떤 페이지보다도 `_app.js` 파일을 먼저 읽기 때문에<
 ### 전역 스타일 지정하기
 
 `_app.js`파일에서 전역 스타일을 지정할 수 있습니다. 바로 `<style jsx global></style>`을 사용해주면 됩니다.
-import NavBar from "@/components/Navbar";
 
 ```javascript
+import NavBar from "@/components/Navbar";
+
 export default function App({ Component, pageProps }) {
   return (
     <div>
@@ -154,6 +155,8 @@ export default function App({ Component, pageProps }) {
 타이틀, 레이아웃, 전역스타일 등등..<br/>
 그래서 Layout 컴포넌트를 따로 빼는 패턴을 많이 사용합니다.
 
+#### `Layout.js`
+
 ```javascript
 import NavBar from "./Navbar";
 import { useRouter } from "next/router";
@@ -170,8 +173,10 @@ export default function Layout({ children }) {
 }
 ```
 
-위와 같이 Latout 컴포넌트에서 구조를 짜줍니다.
+위와 같이 Layout 구조를 짜줍니다.
 children이라는 Props는 하나의 컴포넌트를 또 다른 컴포넌트안에 넣을 때 씁니다.
+
+#### `_app.js`
 
 ```javascript
 import Layout from "@/components/Layout";
@@ -198,4 +203,4 @@ export default function App({ Component, pageProps }) {
 }
 ```
 
-그런다음 Layout 컴포넌트로 app의 내용을 감싸주면 됩니다.
+그런 다음 Layout 컴포넌트로 app의 내용을 감싸주면 됩니다.
