@@ -108,3 +108,94 @@ NextJS는 어떤 페이지보다도 `_app.js` 파일을 먼저 읽기 때문에<
 전역 스타일을 설정하거나, app의 layout을 설정 할 때에는 `_app.js` 를 관리하면 됩니다.
 
 <br/>
+
+---
+
+<br/>
+
+### 전역 스타일 지정하기
+
+`_app.js`파일에서 전역 스타일을 지정할 수 있습니다. 바로 `<style jsx global></style>`을 사용해주면 됩니다.
+import NavBar from "@/components/Navbar";
+
+```javascript
+export default function App({ Component, pageProps }) {
+  return (
+    <div>
+      <NavBar />
+      <Component {...pageProps} />
+      <style jsx global>{`
+        a {
+          color: white;
+          text-decoration: none;
+        }
+        .active {
+          color: blue;
+          font-weight: 700;
+        }
+        .h1 {
+          color: red;
+        }
+      `}</style>
+    </div>
+  );
+}
+```
+
+<br/>
+
+---
+
+<br/>
+
+### Layout 컴포넌트 만들기
+
+`_app.js`는 NextJS가 가장 먼저 읽는 파일인만큼 담아야하는 내용도 많습니다. <br/>
+타이틀, 레이아웃, 전역스타일 등등..<br/>
+그래서 Layout 컴포넌트를 따로 빼는 패턴을 많이 사용합니다.
+
+```javascript
+import NavBar from "./Navbar";
+import { useRouter } from "next/router";
+
+export default function Layout({ children }) {
+  //children은 하나의 컴포넌트를 또 다른 컴포넌트안에 넣을 때 씁니다.
+  const router = useRouter();
+  return (
+    <>
+      <NavBar />
+      <div>{children}</div>
+    </>
+  );
+}
+```
+
+위와 같이 Latout 컴포넌트에서 구조를 짜줍니다.
+children이라는 Props는 하나의 컴포넌트를 또 다른 컴포넌트안에 넣을 때 씁니다.
+
+```javascript
+import Layout from "@/components/Layout";
+
+export default function App({ Component, pageProps }) {
+  return (
+    <Layout>
+      <Component {...pageProps} />
+      <style jsx global>{`
+        a {
+          color: white;
+          text-decoration: none;
+        }
+        .active {
+          color: blue;
+          font-weight: 700;
+        }
+        .h1 {
+          color: red;
+        }
+      `}</style>
+    </Layout>
+  );
+}
+```
+
+그런다음 Layout 컴포넌트로 app의 내용을 감싸주면 됩니다.
