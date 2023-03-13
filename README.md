@@ -101,7 +101,7 @@ import Link from 'next/link
 
 <br/>
 
-### `_app.js` 파일 활용하기
+### 💟 `_app.js` 파일 활용하기
 
 NextJS는 어떤 페이지보다도 `_app.js` 파일을 먼저 읽기 때문에<br/>
 전역 스타일을 설정하거나, app의 layout을 설정 할 때에는 `_app.js` 를 관리하면 됩니다.
