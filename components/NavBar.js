@@ -5,26 +5,46 @@ export default function NavBar() {
   const router = useRouter();
   return (
     <nav>
-      <Link href="/" className={router.pathname === "/" ? "active" : ""}>
-        Home
-      </Link>
-      <Link
-        href="/mypage"
-        className={router.pathname === "/mypage" ? "active" : ""}
-      >
-        MyPage
-      </Link>
-      {/* <style jsx>{`
+      <img src="/vercel.svg" alt="" />
+      <div>
+        <Link href="/" className={router.pathname === "/" ? "active" : "basic"}>
+          Home
+        </Link>
+        <Link
+          href="/mypage"
+          className={router.pathname === "/mypage" ? "active" : "basic"}
+        >
+          MyPage
+        </Link>
+      </div>
+      <style jsx>{`
         nav {
-          background-color: orange;
+          display: flex;
+          gap: 10px;
+          flex-direction: column;
+          align-items: center;
+          padding-top: 20px;
+          padding-bottom: 10px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+            rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
         }
-        a {
-          text-decoration: none;
+        img {
+          max-width: 100px;
+          margin-bottom: 5px;
         }
-        .active {
-          color: purple;
+        nav a {
+          font-weight: 600;
+          font-size: 18px;
+          color: gray;
         }
-      `}</style> */}
+        nav .active {
+          color: tomato;
+        }
+        nav div {
+          display: flex;
+          gap: 10px;
+        }
+      `}</style>
     </nav>
   );
 }

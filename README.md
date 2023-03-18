@@ -218,3 +218,21 @@ Head 말고도 다른 SEO를 위한 컴포넌트를 사용하여 커스텀 하�
 <br/>
 
 ---
+
+### 💟 Redirect와 Rewrite
+
+API는 외부인이 사용할 수 없도록 숨기는 것이 중요합니다.
+Rewirte를 사용하면 api키가 외부에 노출될 일을 없앨 수 있습니다.
+<br/>
+예제)
+<br/>
+
+---
+
+### 💟 Server Side Rendering
+
+NextJS에서는 랜더링 방법을 SSR로 할지 CSR로 할지 설정할 수 있습니다.
+getServerSideRendering() 함수를 index.js에 만들어주면 로딩화면때 보여줄 수 있습니다(?) 이게 마자?
+<br/>
+예제)
+<br/>
