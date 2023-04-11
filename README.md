@@ -221,11 +221,37 @@ Head 말고도 다른 SEO를 위한 컴포넌트를 사용하여 커스텀 하�
 
 ### 💟 Redirect와 Rewrite
 
+#### Redirect
+
+next.config.js 파일에서 redirect 설정을 추가하면 특정 경로를 다른 경로로 이동시킬 수 있습니다. 예를 들어 더 이상 사용하지 않는 페이지라던지, 사이트가 다른 사이트로 이동할 경우 유용하게 사용할 수 있습니다.
+
+```
+<!-- next.config.js -->
+module.exports = {
+  reactStrictMode: true,
+  async redirects(){
+    return [
+      {
+        source:"/detail/:path*",
+        destivation: "/new-detail/:path*",
+        permanent: false,
+
+      }
+    ]
+  }
+}
+```
+
+<br />
+위 예제는 /detail라는 경로로 진입할 경우 /new-detail 경로로 이동시키게끔 하는 설정입니다. 뒤에 `:path*`는 글 ID를 그대로 유지시켜줍니다.<br/>
+permanent는 redirect를 영구적이게 할지 말지를 결정합니다. (이 영구 여부는 검색엔진에 영향을 끼칩니다.)
+
+<br/>
+
+#### Rewrite
+
 API는 외부인이 사용할 수 없도록 숨기는 것이 중요합니다.
 Rewirte를 사용하면 api키가 외부에 노출될 일을 없앨 수 있습니다.
-<br/>
-예제)
-<br/>
 
 ---
 
@@ -236,3 +262,13 @@ getServerSideRendering() 함수를 index.js에 만들어주면 로딩화면때 �
 <br/>
 예제)
 <br/>
+
+---
+
+### 💟 Loading 컴포넌트 만들기
+
+받아오는 데이터가 없을 경우 Loading을 띄워주도록 하는 코드는 아래와 같습니다.
+
+```
+{!movies && <h4>Loading...</h4>}
+```
