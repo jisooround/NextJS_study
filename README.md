@@ -253,6 +253,23 @@ permanent는 redirect를 영구적이게 할지 말지를 결정합니다. (이 
 API는 외부인이 사용할 수 없도록 숨기는 것이 중요합니다.
 Rewirte를 사용하면 api키가 외부에 노출될 일을 없앨 수 있습니다.
 
+```
+const API_KEY = "나의 API KEY";
+// env 파일을 사용하여 한 번 더 가려줄 수 있습니다.
+
+const nextConfig = {
+  reactStrictMode: true,
+  async rewrites() {
+    return [
+      {
+        source: "/api/movies",
+        destination: `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`,
+      },
+    ];
+  },
+};
+```
+
 ---
 
 ### 💟 Server Side Rendering
