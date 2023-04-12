@@ -2,23 +2,23 @@ import Seo from "@/components/Seo";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-export default function Home() {
-  const [movies, setMovies] = useState();
-  useEffect(() => {
-    async function fetchData() {
-      const response = await fetch(`/api/movies`);
-      const { results } = await response.json();
-      console.log(results);
-      setMovies(results);
-    }
-    fetchData();
-  }, []);
+export default function Home({ results }) {
+  // const [movies, setMovies] = useState();
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     const response = await fetch(`/api/movies`);
+  //     const { results } = await response.json();
+  //     console.log(results);
+  //     setMovies(results);
+  //   }
+  //   fetchData();
+  // }, []);
 
   return (
     <div className="container">
       <Seo title="Home" />
-      {!movies && <h4>Loading...</h4>}
-      {movies?.map((movie) => (
+      {/* {!movies && <h4>Loading...</h4>} */}
+      {results?.map((movie) => (
         <div
           onClick={() => onClick(movie.id, movie.original_title)}
           className="movie"
@@ -58,4 +58,15 @@ export default function Home() {
       `}</style>
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  const { results } = await (
+    await fetch(`http://localhost:3000/api/movies`)
+  ).json();
+  return {
+    props: {
+      results,
+    },
+  };
 }

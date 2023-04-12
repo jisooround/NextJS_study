@@ -209,6 +209,8 @@ export default function App({ Component, pageProps }) {
 
 ---
 
+<br />
+
 ### 💟 SEO 스킬 사용하기
 
 NextJS는 Head 컴포넌트를 제공합니다.<br/>
@@ -218,6 +220,8 @@ Head 말고도 다른 SEO를 위한 컴포넌트를 사용하여 커스텀 하�
 <br/>
 
 ---
+
+<br />
 
 ### 💟 Redirect와 Rewrite
 
@@ -272,15 +276,26 @@ const nextConfig = {
 
 ---
 
+<br />
+
 ### 💟 Server Side Rendering
 
-NextJS에서는 랜더링 방법을 SSR로 할지 CSR로 할지 설정할 수 있습니다.
-getServerSideRendering() 함수를 index.js에 만들어주면 로딩화면때 보여줄 수 있습니다(?) 이게 마자?
+보통의 서비스는 데이터를 가져오기 전 로딩 화면을 유저에게 보여주지만, 로딩 화면을 보여주고 싶지 않아하는 서비스도 분명 존재합니다. 그럴 경우에는 NextJS의 get server side props 사용할 수 있습니다.
 <br/>
-예제)
+
+```
+export async function getServerSideProps() {
+
+}
+```
+
+위 코드는 서버에서만 작동합니다.
+
 <br/>
 
 ---
+
+<br />
 
 ### 💟 Loading 컴포넌트 만들기
 
@@ -289,3 +304,13 @@ getServerSideRendering() 함수를 index.js에 만들어주면 로딩화면때 �
 ```
 {!movies && <h4>Loading...</h4>}
 ```
+
+<br />
+
+---
+
+<br />
+
+### 💟 Dynamic URL 다루기
+
+`detail/123` 과 같이 ID 이름이 들어간 경로로
