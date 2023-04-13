@@ -14,6 +14,7 @@ export default function RootLayout({
           <a href="">About</a>
         </nav>
       </header>
+
       <body>{children}</body>
     </html>
   );
