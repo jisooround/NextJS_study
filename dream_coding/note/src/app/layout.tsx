@@ -1,4 +1,13 @@
+import { Metadata } from "next";
 import styles from "./layout.module.css";
+
+export const metadata: Metadata = {
+  title: "jisooround",
+  description: "jisooround page",
+  icons: {
+    icon: "/favicon.ico",
+  },
+};
 
 export default function RootLayout({
   children,

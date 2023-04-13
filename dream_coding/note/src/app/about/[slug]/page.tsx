@@ -1,6 +1,12 @@
 import { notFound } from "next/navigation";
 import React from "react";
 
+export function generateMetadata({ params }: Props) {
+  return {
+    title: `${params.slug}`,
+  };
+}
+
 type Props = {
   params: {
     slug: string;
