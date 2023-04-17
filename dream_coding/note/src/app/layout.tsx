@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <>
       <header className={styles.header}>
         <h1>JISOO WORLD</h1>
         <nav className={styles.nav}>
@@ -23,8 +23,7 @@ export default function RootLayout({
           <a href="">About</a>
         </nav>
       </header>
-
       <body>{children}</body>
-    </html>
+    </>
   );
 }
