@@ -5,12 +5,12 @@ export async function sendContactEmail(email: EmailData) {
     method: "POST",
     body: JSON.stringify(email),
     headers: {
-      "Content-Type": "application/json",
+      "Content-Type": "applicatioin/json",
     },
   });
   const data = await response.json();
   if (!response.ok) {
-    throw new Error(data.message || "서버 요청에 실패함");
+    throw new Error(data.message || "서버 요청에 실패함 😂");
   }
   return data;
 }

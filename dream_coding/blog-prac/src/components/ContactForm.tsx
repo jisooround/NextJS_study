@@ -1,5 +1,6 @@
 "use client";
-import { sendContactEmail } from "@/service/contact";
+
+import { sendEmail } from "@/service/email";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import Banner, { BannerData } from "./Banner";
 
@@ -26,7 +27,7 @@ const ContactForm = (props: Props) => {
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // 페이지가 다시 로딩되지 않도록 함
     console.log(form);
-    sendContactEmail(form)
+    sendEmail(form)
       .then(() => {
         setBanner({
           message: "메일을 성공적으로 보냈습니다.",
