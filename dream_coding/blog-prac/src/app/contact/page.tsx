@@ -1,3 +1,4 @@
+import ContactForm from "@/components/ContactForm";
 import React from "react";
 import { AiFillGithub, AiFillLinkedin, AiFillYoutube } from "react-icons/ai";
 type Props = {};
@@ -27,7 +28,7 @@ const ContactPage = (props: Props) => {
         ))}
       </ul>
       <h2 className="text-3xl font-bold my-8">Or Send me an email</h2>
-      {/* <ContactForm /> */}
+      <ContactForm />
     </section>
   );
 };
